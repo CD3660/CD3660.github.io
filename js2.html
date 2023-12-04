@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js2</title>
+  </head>
+
+  <body>
+    <button onclick="ageIf()">나이 구하기</button>
+    <button onclick="for1()">반복문</button>
+    <button onclick="forMul1()">구구단 2단</button>
+    <button onclick="forMul2()">구구단 2~9단</button>
+    <button onclick="div3()">3의 배수 체크하기</button>
+    <button onclick="row()">1~입력한 수까지 표시하기</button>
+    <button onclick="sum(1,2)">1+2</button>
+    <script>
+      function ageIf() {
+        const currentYear = 2023;
+        let birthYear;
+        let age;
+
+        birthYear = parseInt(prompt("태어난 연도를 입력하세요.(yyyy)", "0"));
+        age = currentYear - birthYear + 1;
+
+        if (age < 20) {
+          alert(`${age}살은 성인이 아닙니다.`);
+        } else {
+          alert(`${age}살은 성인입니다.`);
+        }
+      }
+      function for1() {
+        for (let i = 1; i <= 10; i++) {
+          console.log(`${i}반복중`);
+        }
+      }
+      function forMul1() {
+        for (let i = 1; i < 10; i++) {
+          console.log(`2 X ${i} = ${i * 2}`);
+        }
+      }
+      function forMul2() {
+        for (let i = 2; i <= 9; i++) {
+          for (let j = 1; j <= 9; j++) {
+            console.log(`${i} X ${j} = ${i * j}`);
+            document.write(`<p>${i} X ${j} = ${i * j}</p>`);
+          }
+        }
+      }
+      function aa() {
+        const animal = ["강아지", "고양이", "부엉이", "참새"];
+        for (let i = 0; i < animal.length; i++) {
+          console.log(animal[i]);
+        }
+
+        animal.forEach(function (animalSingle) {
+          console.log(`${animalSingle}`);
+        });
+        const CDObject = {
+          name: "객체명",
+          gender: "남",
+          age: 28,
+        };
+        // console.log(CDObject.name);
+        for (key in CDObject) {
+          console.log(`${key} : ${CDObject[key]} `);
+        }
+      }
+      function div3() {
+        var num = prompt("숫자를 입력하세요.");
+        if (num != null) {
+          num = parseInt(num);
+          if (num % 3 === 0) {
+            alert(`${num}은 3의 배수입니다.`);
+          } else {
+            alert(`${num}은 3의 배수가 아닙니다.`);
+          }
+        }
+      }
+      function row() {
+        var num = parseInt(prompt("숫자를 입력하세요."));
+        var str = "";
+        if (num > 3) {
+          for (let i = 1; i <= num; i++) {
+            str += i;
+          }
+          console.log(str);
+        }
+      }
+      function calcSum(paramNum){
+        let sum = 0;
+        for(let i=1; i<=paramNum; i++){
+            sum+=i;
+        }
+        console.log(`1~${paramNum}까지의 합은 ${sum}입니다.`);
+      }
+      calcSum(100);
+      function sum(x, y=0){
+          console.log(x+y);
+        return x+y;
+      }
+      console.log(sum(1));
+      console.log(sum(1,2));
+
+      let car = {
+        company : '현대',
+        model : '그랜져',
+        color : '검정',
+        maxSpeed : 200,
+        run(){
+            console.log(this.color+'색 차가 달립니다.');
+        },
+        tire : {
+            company : '타이어 제조사'
+        }
+      };
+      console.log(car.model + car.color);
+      console.log(car['model']+car['color']);
+      car.run();
+      let tempObject = {};
+      tempObject.data1 = 'a';
+      console.log(tempObject.data1);
+
+      class Product {
+        constructor(name, price){
+            this.name = name;
+            this.price = price;
+        }
+      }
+      let product1 = new Product("상품명", 12345);
+      console.log(`${product1.name} 가격: ${product1.price}`);
+      class Calculator{
+        constructor(num1, num2){
+            this.num1 = num1;
+            this.num2 = num2;
+        }
+        sum() {
+            return this.num1+this.num2;
+        }
+        min(){
+            return this.num1-this.num2;
+        }
+        mul(){
+            return this.num1 * this.num2;
+        }
+        div(){
+            return this.num1/this.num2;
+        }
+
+      }
+      let calc = new Calculator(50,20);
+      console.log(calc.sum());
+      console.log(calc.min());
+      console.log(calc.mul());
+      console.log(calc.div());
+
+    </script>
+  </body>
+</html>
