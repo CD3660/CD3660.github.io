@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js3</title>
+    <style>
+        h1 {
+            font-size: 3em;
+        }
+        .clicked {
+            background-color: yellow;
+        }
+        .subClicked{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title" class="CD">타이틀</h1>
+    <div id="group">
+        <p>글자</p>
+        <p>글자</p>
+        <p class="btn">글자</p>
+        <p id="title_sub">타이틀 친구</p>
+    </div>
+    <form action="#" method="get" name="order">
+        <legend>상품 정보 표기</legend>
+        <ul>
+            <li>
+                <label for="orderName">이름</label>
+                <input type="text" id="orderName" name="orderName"/>
+            </li>
+            <li>
+                <label for="product">상품</label>
+                <input type="text" id="product" name="product" value="상품"/>
+            </li>
+        </ul>
+    </form>
+    <p></p>
+
+    <script>
+        document.querySelector('#orderName');
+        console.log(document.querySelector('#orderName').value);
+        console.log(document.order.product.value);
+        console.log(document.forms[0].elements[1].value);
+        console.log(document.querySelectorAll('p')[1]);
+        console.log(document.querySelectorAll('p')[2]);
+        console.log(document.querySelectorAll('p')[3]);
+
+    </script>
+
+    <script>
+        // console.log(document.querySelector('#group').innerText);
+        // console.log(document.querySelector('#group').innerText);
+        // console.log(document.querySelector('#group').innerHTML);
+        // console.log(document.querySelector('#group').textContent);
+
+        const title = document.querySelector('#title');
+        const title_sub = document.querySelector('#title_sub');
+        
+        title_sub.onclick = function(){
+            title.classList.toggle('subClicked');
+        };
+
+        title.onclick = function(){
+            title.classList.toggle('clicked');
+            // if(title.classList.contains('clicked')){
+            //     title.classList.add('clicked');
+            //     title.innerHTML('TITLE');
+            // } else {
+            //     title.classList.remove('clicked');
+            //     title.innerHTML('타이틀');
+            // }
+        };
+    </script>
+</body>
+
+</html>

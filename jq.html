@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        .available{
+            background-color: blue;
+        }
+        .unavailable{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <p id="id1">아이디1</p>
+    <p class="id2">아이디2</p>
+
+    <form action="#" method="get">
+        <table>
+            <tr>
+                <td>성명</td>
+                <td>아이디</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="name" name="name"/></td>
+                <td><input type="text" id="id" name="id"/></td>
+                <td><a onclick="lengthCheckFn()">유효성 체크</a></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function lengthCheckFn(){
+            var name = $('#name');
+            var id = $('#id')
+            if(name.val().length<4){
+                name.addClass('unavailable');
+                name.removeClass('available');
+            } else {
+                name.addClass('available');
+                name.removeClass('unavailable');
+            }
+            if(id.val().length<4){
+                id.addClass('unavailable');
+                id.removeClass('available');
+            } else {
+                id.addClass('available');
+                id.removeClass('unavailable');
+            }
+
+            if(name.val().length>=4&&id.val().length>=4){
+                setTimeout(function(){alert('회원가입 가능!');},1);
+            }
+        }
+    </script>
+</body>
+</html>
