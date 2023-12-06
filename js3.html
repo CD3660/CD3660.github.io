@@ -21,7 +21,7 @@
 <body>
     <h1 id="title" class="CD">타이틀</h1>
     <div id="group">
-        <p>글자</p>
+        <p class="clicked subClicked">글자</p>
         <p>글자</p>
         <p class="btn">글자</p>
         <p id="title_sub">타이틀 친구</p>
@@ -39,17 +39,15 @@
             </li>
         </ul>
     </form>
-    <p></p>
 
     <script>
         document.querySelector('#orderName');
-        console.log(document.querySelector('#orderName').value);
+        console.log(document.querySelector('#product').value);
         console.log(document.order.product.value);
         console.log(document.forms[0].elements[1].value);
         console.log(document.querySelectorAll('p')[1]);
         console.log(document.querySelectorAll('p')[2]);
         console.log(document.querySelectorAll('p')[3]);
-
     </script>
 
     <script>
@@ -73,7 +71,7 @@
             // } else {
             //     title.classList.remove('clicked');
             //     title.innerHTML('타이틀');
-            // }
+            // } <p class="clicked subClicked cd">글자</p> class1 = clicked class2 = subClicked class3 = cd
         };
     </script>
 </body>
